@@ -8,7 +8,7 @@ Designed to allow AI to receive requests via prompt, and grab any information fr
 
 An installation guide for this PHP-based API with admin functionality:
 
-Set up the environment:
+**Set up the environment:**
 
 Install PHP 7.4 or higher
 Install Composer
@@ -16,35 +16,35 @@ Install Laravel: composer global require laravel/installer
 
 ---
 
-Create a new Laravel project:
+**Create a new Laravel project:**
 laravel new ai-friendly-api
 cd ai-friendly-api
 
 ---
-Install required packages:
+**Install required packages:**
 
 composer require laravel/sanctum
 composer require weidner/goutte
 
 ---
 
-Set up the database:
+**Set up the database:**
 
 Create a new MySQL database
 Update the .env file with your database credentials
 
 ---
 
-Run migrations:
+**Run migrations:**
 php artisan migrate
 
 ---
 
-Set up authentication:
+**Set up authentication:**
 php artisan make:auth
 
 ---
-Configure the application:
+**Configure the application:**
 
 Add the following to your .env file:
 
@@ -54,14 +54,14 @@ APP_API_KEY=your_secret_api_key
 
 ---
 
-Set up rate limiting:
+**Set up rate limiting:**
 
 In app/Http/Kernel.php, add the following to the $routeMiddleware array:
 php 'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
 ---
 
-Implement the API key middleware:
+**Implement the API key middleware:**
 
 Create a new middleware: php artisan make:middleware CheckApiKey
 Implement the middleware to check for the API key in the request header
@@ -79,11 +79,11 @@ Create the admin layout and dashboard views as shown in the code above
 
 ---
 
-Set up the storage for scraped files:
+**Set up the storage for scraped files:**
 php artisan storage:link
 ---
 
-Run the application:
+**Run the application:**
 php artisan serve
 ---
 
